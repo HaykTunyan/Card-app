@@ -1,3 +1,5 @@
+// import component for friend.
+
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatSort } from '@angular/material';
 
@@ -6,26 +8,16 @@ import { MatTableDataSource, MatSort } from '@angular/material';
   templateUrl: './friend.component.html',
   styleUrls: ['./friend.component.css']
 })
-export class FriendComponent implements OnInit {
+
+export class FriendComponent {
 
   displayedColumns = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
-  @ViewChild(MatSort) sort: MatSort;
-
-  /**
-   * Set the sort after the view init since this component will
-   * be able to query its view for the initialized sort.
-   */
-  ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
-  }
-
-
-
-  constructor() { }
-
-  ngOnInit() {
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
   }
 
 }

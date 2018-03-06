@@ -1,3 +1,4 @@
+// import component for card.
 import { Component, OnInit } from '@angular/core';
 import { CardService } from '../card.service';
 
@@ -6,6 +7,7 @@ import { CardService } from '../card.service';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
+
 export class CardComponent implements OnInit {
 
   public cards = []

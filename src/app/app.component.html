@@ -1,4 +1,5 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<!-- app component view. -->
+
 <mat-toolbar color="primary">
   <mat-toolbar-row>
     <button type="button" mat-icon-button (click)="drawer.toggle(menuicon=!menuicon)">
@@ -27,6 +28,8 @@
       <a mat-list-item routerLink="/cards" routerLinkActive="active">Card</a>
       <mat-divider></mat-divider>
       <a mat-list-item routerLink="/friends" routerLinkActive="active">Friends</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink="/tablelists" routerLinkActive="active">Tablelists</a>
     </mat-nav-list>
     <mat-divider></mat-divider>
   </mat-drawer>

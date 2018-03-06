@@ -1,22 +1,22 @@
-/* style file */
+/* app component style file. */
 
 .spacer {
-
     -webkit-box-flex: 1 1 auto;
     -ms-flex:  1 1 auto;
     flex: 1 1 auto;
 }
-
-
-
 .sidenav-content {
-    padding: 20px;
+    padding: 5px;
     min-height: 500px;
 }
-
 .sidenav {
     padding: 15px;
     width: 170px;
     height: 100%;
+}
 
+@media screen and (min-width: 375px) {
+    .sidenav-content {
+        padding: 20px;
+    }
 }

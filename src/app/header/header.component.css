@@ -1,0 +1,47 @@
+/* header component style. */
+
+.container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.banner-title {
+    color: darkgray;
+    font-weight: bold;
+}
+.banner-content {
+    max-width: 900px;
+    margin: 20px auto
+}
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+.card-content {
+    padding: 20px;
+}
+.card {
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto
+}
+.card-actions {
+    padding: 15px;
+}
+.mat-card>.mat-card-actions:last-child {
+    margin-bottom: 0;
+}
+.demo-chip-list {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container>* {
+  width: 100%;
+}

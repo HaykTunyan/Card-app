@@ -1,24 +1,82 @@
 [
     { 
-        "name": "Alen",
-        "title": "subAlen",
-        "text": "boy", 
-        "age": 21 },
-    {
-        "name": "Ani",
-        "title": "subAni",
-        "text": "girl",
-        "age": 20
+        "name": "Bill Gates",
+        "position": "Microsoft co-founder",
+        "email": "billgates@gmail.com"
     },
     {
-        "name": "Denn",
-        "title": "subDenn",
-        "text": "boy",
-        "age": 23
-    },{
-        "name": "Emmi",
-        "title": "subEmi",
-        "text": "girl",
-        "age": 19
+        "name": "James Gosling",
+        "position": "Java Creator",
+        "email": "jamesgosling@gmail.com"
+    },
+    {
+        "name": "Richard Stallman",
+        "position": "GNU Project Creator",
+        "email": "richardstalman@gmail.com"
+    },
+    {
+        "name": "Bjarne Stroustrup",
+        "position": "C++ Creator",
+        "email": "bjarnestroustrup@gmail.com"
+    },
+    {
+        "name": "Tim Beners-Lee",
+        "position": "HTML and WWW inventor",
+        "email": "timbeners-lee@gmail.com"
+    },
+    {
+        "name": "Ken Thompson ",
+        "position": "UNIX Co-Creator",
+        "email": "kenthompson@gmail.com"
+    },
+    {
+        "name": "Linus Torvalds",
+        "position": "Linux Kernel Creator",
+        "email": "linustorvalds@gmail.com"
+    },
+    {
+        "name": "Dennis Ritchie",
+        "position": "C Programming language creator",
+        "email": "dennisritchie@gmailcom"
+    },
+    {
+        "name": "Jack Dorsey",
+        "position": "Twitter Creator",
+        "email": "jackdorsey@gmail.com"
+    },
+    {
+        "name": "Ruchi Sanghvi",
+        "position": "FB’s first female engineer",
+        "email": "ruchisangvi@gmail.com"
+    },
+    {
+        "name": "Drew Houston",
+        "position": "Dropbox Creator",
+        "email": "drewhouston@gmail.com"
+    },
+    {
+        "name": "Mark Zuckerberg",
+        "position": "FB Creator",
+        "email": "markzuckerberg@gmail.com"
+    },
+    {
+        "name": "Larry Wall",
+        "position": "Perl language",
+        "email": "larrywall@gmail.com"
+    },
+    {
+        "name": "Yukihiro Matsumoto",
+        "position": "Ruby interpreter",
+        "email": "yukihieomatsumoto@gmail.com"
+    },
+    {
+        "name": "John Resig",
+        "position": "Jquery, Javascript Library",
+        "email": "johnresig@gmail.com"
+    },
+    {
+        "name": "Phil Katz",
+        "position": "ZIP format",
+        "email": "philkatz@gmail.com"
     }
 ]

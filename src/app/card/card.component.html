@@ -1,34 +1,47 @@
-<!-- Card view. -->
-<mat-card *ngFor="let card of cards" class="card">
-  <mat-card-header>
-    <mat-card-title>{{ users }}</mat-card-title>
-    <mat-card-subtitle><strong>{{ card.name }}</strong></mat-card-subtitle>
-  </mat-card-header>
-  <mat-divider></mat-divider>
-  <mat-card-content>
-    <mat-list role="list">
-      <mat-list-item role="listitem">{{ card.title }}</mat-list-item>
-      <mat-list-item role="listitem">{{ card.text }}</mat-list-item>
-      <mat-list-item role="listitem">{{ card.age }}</mat-list-item>
-      <mat-list-item role="listitem" *ngIf="showIcon">
-        <mat-icon>
-          <i class="material-icons">language</i>
+<!-- Card component view. -->
+
+<ng-container class="card-container">
+  <mat-card *ngFor="let card of cards" class="card">
+    <mat-card-header>
+      <mat-card-title><strong>{{ card.name }}</strong></mat-card-title>
+    </mat-card-header>
+    <!-- card-header. -->
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <mat-list role="list">
+        <mat-list-item role="listitem">{{ card.position }}</mat-list-item>
+        <mat-list-item role="listitem">{{ card.email }}</mat-list-item>
+      </mat-list>
+      <mat-list>
+        <mat-list-item role="listitem" *ngIf="showIcon">
+          <mat-icon>
+            <i class="material-icons">language</i>
+          </mat-icon>
+          <mat-icon>
+            <i class="material-icons">language</i>
+          </mat-icon>
+          <mat-icon>
+            <i class="material-icons">language</i>
+          </mat-icon>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <!-- card-content. -->
+    <mat-card-actions>
+      <button mat-raised-button (click)="changesicon = !changesicon">
+        <span *ngIf="!changesicon">LIKE</span>
+        <mat-icon *ngIf="changesicon">
+          <i class="material-icons primary000">thumb_up</i>
         </mat-icon>
+      </button>
+      <button mat-raised-button routerLink="/headers" routerLinkActive="active" color="warn">
         <mat-icon>
-          <i class="material-icons">language</i>
+          <i class="material-icons">redo</i>
         </mat-icon>
-        <mat-icon>
-          <i class="material-icons">language</i>
-        </mat-icon>
-      </mat-list-item>
-    </mat-list>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button (click)="changesicon = !changesicon">
-      <span *ngIf="!changesicon">LIKE</span>
-      <mat-icon *ngIf="changesicon"><i class="material-icons primary000">thumb_up</i></mat-icon>
-    </button>
-    <button mat-raised-button routerLink="/headers" routerLinkActive="active" color="warn"><mat-icon><i class="material-icons">redo</i></mat-icon></button>
-    <button mat-raised-button  color="accent">Share</button>
-  </mat-card-actions>
-</mat-card>
+      </button>
+      <button mat-raised-button  (click)="showIcon = !showIcon" color="accent">Share</button>
+    </mat-card-actions>
+    <!-- card-actions. -->
+  </mat-card>
+  <!-- card. -->
+</ng-container>

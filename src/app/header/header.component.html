@@ -1,14 +1,108 @@
-<p>
-  header works!
-</p>
-<div>
+<!-- header component view. -->
 
-  <h1>{{ users }}</h1>
-
-  <ul *ngFor="let card of cards">
-
-    <li>{{ card.name }}</li>
-
-  </ul>
-
-</div>
+<ng-container class="container">
+  <h2 class="banner-title">Users Informations</h2>
+  <mat-divider></mat-divider>
+  <mat-card class="card">
+    <mat-card-header class="card-header">
+      <div mat-card-avatar class="header-image"></div>
+      <mat-card-title class="card-title">User Informations</mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content class="card-content">
+      <mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper">
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Fill out your name</ng-template>
+            <mat-form-field>
+              <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+            </mat-form-field>
+            <button mat-button matStepperNext>Next</button>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+          <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Fill out your address</ng-template>
+            <mat-form-field>
+              <input matInput placeholder="Address" formControlName="secondCtrl" required>
+            </mat-form-field>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </form>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Done</ng-template>
+          <span>You are now done.</span>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-actions class="card-actions">
+      <button mat-raised-button color="primary">Save</button>
+      <button mat-button color="warn">Cencel</button>
+    </mat-card-actions>
+  </mat-card>
+  <!-- card. -->
+  <div class="banner-content">
+    <mat-form-field class="demo-chip-list">
+      <mat-chip-list #chipList>
+        <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable" [removable]="removable" (remove)="remove(fruit)" color="warn">
+          {{fruit.name}}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+        <input placeholder="New fruit..." [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+          (matChipInputTokenEnd)="add($event)" />
+      </mat-chip-list>
+    </mat-form-field>
+    <mat-card class="card">
+      <mat-slider></mat-slider>
+      <mat-checkbox>Check me!</mat-checkbox>
+    </mat-card>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title class="card-title">Email</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="example-container">
+          <mat-form-field>
+            <input matInput placeholder="Enter your email" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+        <mat-divider></mat-divider>
+      <mat-card-actions>
+        <mat-tab-group>
+          <mat-tab label="Tab 1">
+            <mat-list role="list">
+              <mat-list-item role="listitem">Item 1</mat-list-item>
+              <mat-list-item role="listitem">Item 2</mat-list-item>
+              <mat-list-item role="listitem">Item 3</mat-list-item>
+            </mat-list>
+            <mat-slider></mat-slider>
+          </mat-tab>
+          <mat-tab label="Tab 2">
+            <mat-list role="list">
+              <mat-list-item role="listitem">Item 1</mat-list-item>
+              <mat-list-item role="listitem">Item 2</mat-list-item>
+              <mat-list-item role="listitem">Item 3</mat-list-item>
+            </mat-list>
+            <mat-slider></mat-slider>
+          </mat-tab>
+          <mat-tab label="Tab 3">
+            <mat-list role="list">
+              <mat-list-item role="listitem">Item 1</mat-list-item>
+              <mat-list-item role="listitem">Item 2</mat-list-item>
+              <mat-list-item role="listitem">Item 3</mat-list-item>
+            </mat-list>
+            <mat-slider></mat-slider>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <!-- banner-content. -->
+</ng-container>
+<!-- container. -->
